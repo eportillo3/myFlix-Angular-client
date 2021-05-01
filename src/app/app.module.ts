@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
+import { RouterModule, Routes } from '@angular/router';
 
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
@@ -15,15 +17,41 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { UserRegistrationFormComponent } from './user-registration-form/user-registration-form.component';
 import { UserLoginFormComponent } from './user-login-form/user-login-form.component';
+import { MovieCardComponent } from './movie-card/movie-card.component';
+import { WelcomePageComponent } from './welcome-page/welcome-page.component';
+import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { DirectorDialogComponent } from './director-dialog/director-dialog.component';
+import { GenreDialogComponent } from './genre-dialog/genre-dialog.component';
+import { DetailsDialogComponent } from './details-dialog/details-dialog.component';
+import { UserProfileComponent } from './user-profile/user-profile.component';
+import { UserProfileUpdateComponent } from './user-profile-update/user-profile-update.component';
+import { FooterComponent } from './footer/footer.component';
+
+const appRoutes: Routes = [
+  { path: 'welcome', component: WelcomePageComponent },
+  { path: 'movies', component: MovieCardComponent },
+  { path: 'profile', component: UserProfileComponent },
+  { path: '', redirectTo: 'welcome', pathMatch: 'prefix' },
+];
 
 @NgModule({
   declarations: [
     AppComponent,
     UserRegistrationFormComponent,
-    UserLoginFormComponent
+    UserLoginFormComponent,
+    MovieCardComponent,
+    WelcomePageComponent,
+    NavBarComponent,
+    DirectorDialogComponent,
+    GenreDialogComponent,
+    DetailsDialogComponent,
+    UserProfileComponent,
+    UserProfileUpdateComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     AppRoutingModule,
@@ -35,6 +63,8 @@ import { UserLoginFormComponent } from './user-login-form/user-login-form.compon
     MatFormFieldModule,
     MatDialogModule,
     MatSnackBarModule,
+    MatSnackBarModule,
+    RouterModule.forRoot(appRoutes),
     MatIconModule
   ],
   providers: [],
