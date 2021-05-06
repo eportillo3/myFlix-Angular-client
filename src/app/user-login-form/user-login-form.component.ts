@@ -1,8 +1,13 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Router } from '@angular/router';
+
+// API call
 import { UserLoginService } from '../fetch-api-data.service';
+
+// Angular material
 import { MatDialogRef } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { Router } from '@angular/router';
+
 
 
 @Component({
@@ -23,6 +28,9 @@ export class UserLoginFormComponent implements OnInit {
 
   ngOnInit(): void { }
 
+   /**
+   * Function that sends user input to the API endpoint to login the user
+   */
   loginUser(): void {
     this.fetchApiData.userLogin(this.userData).subscribe((response) => {
       this.dialogRef.close();

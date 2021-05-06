@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-
-import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
+
+// Angular material
+import { MatSnackBar } from '@angular/material/snack-bar';
+
 
 @Component({
   selector: 'app-nav-bar',
@@ -17,6 +19,9 @@ export class NavBarComponent implements OnInit {
 
   ngOnInit(): void { }
 
+ /**
+   * Function to log out the user from the application
+   */
   logOutUser(): void {
     localStorage.clear;
     this.router.navigate(['welcome']);
