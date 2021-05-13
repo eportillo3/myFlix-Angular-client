@@ -4,6 +4,53 @@
   flex-wrap: wrap;
   justify-content: center;
   background-color: #121620;
+  height: 100%;
+}
+
+span {
+  color: #ffc000;
+}
+
+.container-row {
+  // display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: #121620;
+  color: white;
+  height: 30vh;
+  width: 100%;
+  // display: inline-block;
+  display: flex;
+}
+
+// .content-row {
+//   display: grid;
+//   grid-template-columns: 1fr;
+// }
+
+.col1 {
+  width: 50%;
+  line-height: 70px;
+  text-transform: uppercase;
+  float: left;
+  height: 100px;
+  margin: 30px;
+  font-size: 75px;
+  flex: 1;
+  padding: 50px;
+  font-weight: bold;
+}
+
+.col2 {
+  width: 50%;
+  float: right;
+  height: 100px;
+  margin: 30px;
+  flex: 1;
+  padding: 50px;
+  font-size: 20px;
+  line-height: 25px;
 }
 
 .mat-card {

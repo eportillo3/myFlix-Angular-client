@@ -1,63 +1,88 @@
 <app-nav-bar></app-nav-bar>
 
-<div class="container">
-  <mat-card *ngFor="let movie of movies">
-    <mat-card-header>
-      <mat-card-title>{{ movie.Title }}</mat-card-title>
-      <mat-card-subtitle
-        >Directed by: {{ movie.Director.Name }}</mat-card-subtitle
-      >
-    </mat-card-header>
-    <img src="{{ movie.ImagePath }}" alt="{{ movie.Title }}" />
-    <mat-card-actions>
-      <button
-        class="movie-card-btn"
-        mat-button
-        color="primary"
-        (click)="
-          showDetailsDialog(
-            movie.Title,
-            movie.ImagePath,
-            movie.Description,
-            movie.Genre.Name,
-            movie.Director.Name
-          )
-        "
-      >
-        Details
-      </button>
-      <button
-        class="movie-card-btn"
-        mat-button
-        color="primary"
-        (click)="showGenreDialog(movie.Genre.Name, movie.Genre.Description)"
-      >
-        Genre
-      </button>
-      <button
-        class="movie-card-btn"
-        mat-button
-        color="primary"
-        (click)="
-          showDirectorDialog(
-            movie.Director.Name,
-            movie.Director.Bio,
-            movie.Director.Birth,
-            movie.Director.Death
-          )
-        "
-      >
-        Director
-      </button>
-      <button
-        mat-icon-button
-        color="warn"
-        aria-label="Add movie to favorites button"
-        (click)="addFavorite(movie._id, movie.Title)"
-      >
-        <mat-icon>favorite_border</mat-icon>
-      </button>
-    </mat-card-actions>
-  </mat-card>
+<!-- <div class="entire-page"> -->
+<div class="container-row">
+  <!-- <div class="content-row"> -->
+  <div class="col1">
+    <p>
+      Choose your <span>favorite</span> movies and add them to your collection
+    </p>
+  </div>
+  <div class="col2">
+    <p>
+      Welcome cinephiles! MyFlix is an online movie collection app that allows
+      you to pick and store your favorite movies into your collection.
+      <br />
+      <br />
+      This app also lets you view the genre, director and details about each
+      movie. Start building your favorite movies with us and collect a lifetime
+      collection of movies that you can share with your friends!
+    </p>
+  </div>
+  <!-- </div> -->
+</div>
+<div>
+  <div class="container">
+    <mat-card *ngFor="let movie of movies">
+      <mat-card-header>
+        <mat-card-title>{{ movie.Title }}</mat-card-title>
+        <mat-card-subtitle
+          >Directed by: {{ movie.Director.Name }}</mat-card-subtitle
+        >
+      </mat-card-header>
+      <img src="{{ movie.ImagePath }}" alt="{{ movie.Title }}" />
+
+      <mat-card-actions>
+        <button
+          class="movie-card-btn"
+          mat-button
+          color="primary"
+          (click)="
+            showDetailsDialog(
+              movie.Title,
+              movie.ImagePath,
+              movie.Description,
+              movie.Genre.Name,
+              movie.Director.Name
+            )
+          "
+        >
+          Details
+        </button>
+        <button
+          class="movie-card-btn"
+          mat-button
+          color="primary"
+          (click)="showGenreDialog(movie.Genre.Name, movie.Genre.Description)"
+        >
+          Genre
+        </button>
+        <button
+          class="movie-card-btn"
+          mat-button
+          color="primary"
+          (click)="
+            showDirectorDialog(
+              movie.Director.Name,
+              movie.Director.Bio,
+              movie.Director.Birth,
+              movie.Director.Death
+            )
+          "
+        >
+          Director
+        </button>
+        <button
+          mat-icon-button
+          color="warn"
+          aria-label="Add movie to favorites button"
+          (click)="addFavorite(movie._id, movie.Title)"
+        >
+          <mat-icon>favorite_border</mat-icon>
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
 </div>
 <app-footer></app-footer>
+<!-- </div> -->
