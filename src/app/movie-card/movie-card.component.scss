@@ -18,23 +18,18 @@ span {
   justify-content: center;
   background-color: #121620;
   color: white;
-  height: 30vh;
+  // height: 30vh;
   width: 100%;
   // display: inline-block;
   display: flex;
 }
-
-// .content-row {
-//   display: grid;
-//   grid-template-columns: 1fr;
-// }
 
 .col1 {
   width: 50%;
   line-height: 70px;
   text-transform: uppercase;
   float: left;
-  height: 100px;
+  // height: 100px;
   margin: 30px;
   font-size: 75px;
   flex: 1;
@@ -45,12 +40,35 @@ span {
 .col2 {
   width: 50%;
   float: right;
-  height: 100px;
+  // height: 100px;
   margin: 30px;
   flex: 1;
   padding: 50px;
   font-size: 20px;
   line-height: 25px;
+}
+
+@media (max-width: 800px) {
+  .col1 {
+    padding-bottom: 0px;
+  }
+
+  .col2 {
+    padding-top: 10px;
+  }
+}
+
+@media (max-width: 500px) {
+  .col1 {
+    font-size: 50px;
+    line-height: 45px;
+    padding: 10px;
+    margin-bottom: 0px;
+  }
+
+  .col2 {
+    margin: 0px;
+  }
 }
 
 .mat-card {
